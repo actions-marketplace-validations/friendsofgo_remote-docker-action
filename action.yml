@@ -1,0 +1,16 @@
+name: Remote Docker
+author: Friends of Go (it@friendsofgo.tech)
+description: A GitHub Action that supports Docker remotely
+inputs:
+  who-to-greet:  # id of input
+    description: 'Who to greet'
+    required: true
+    default: 'World'
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.who-to-greet }}
