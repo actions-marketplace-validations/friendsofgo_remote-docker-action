@@ -5,15 +5,18 @@ branding:
   color: blue
   icon: play
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  hostAddress:
+    description: 'Deployment host address'
     required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  caCert:
+    description: 'CA certificate'
+    required: true
+  serverCert:
+    description: 'Server certificate'
+    required: true
+  serverKey:
+    description: 'Server key'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.who-to-greet }}
