@@ -1,6 +1,9 @@
 name: Remote Docker
 author: Friends of Go (it@friendsofgo.tech)
 description: A GitHub Action that supports Docker remotely
+branding:
+  color: blue
+  icon: play
 inputs:
   who-to-greet:  # id of input
     description: 'Who to greet'
