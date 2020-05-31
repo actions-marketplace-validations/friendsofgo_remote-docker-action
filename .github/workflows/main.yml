@@ -1,0 +1,18 @@
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: A job to test the action
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run action
+        uses: ./
+        id: run
+        with:
+          who-to-greet: 'Friends of Go'
+
+      - name: Get the output files
+        run: echo "Files found ${{ steps.run.outputs.time }}"
